@@ -6,12 +6,19 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject newBall = Instantiate (pokeball);
-		newBall.SetActive (true);
+		createBall ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		// Create new ball
+		if (Input.GetKeyDown(KeyCode.Return)) {
+			createBall();
+		}
+	}
+
+	private void createBall() {
+		GameObject newBall = Instantiate (pokeball);
+		newBall.SetActive (true);
 	}
 }
